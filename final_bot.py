@@ -334,18 +334,18 @@ async def mode_callback(query: types.CallbackQuery):
         return
     
     mode_map = {
-        "mode_literal": "әдеби",
-        "mode_academic": "академиялық",
-        "mode_simple": "күнделікті"
+        "mode_literal": "литературный",
+        "mode_academic": "академический",
+        "mode_simple": "простой"
     }
     
     mode_names = {
-        "әдеби": "📚 Әдеби",
-        "академиялық": "🎓 Академиялық",
-        "күнделікті": "💬 Күнделікті"
+        "литературный": "📚 Әдеби",
+        "академический": "🎓 Академиялық",
+        "простой": "💬 Күнделікті"
     }
     
-    selected_mode = mode_map.get(query.data, "әдеби")
+    selected_mode = mode_map.get(query.data, "литературный")
     user_modes[user_id] = selected_mode
     
     await query.answer(f"Таңдалды: {mode_names[selected_mode]}")
